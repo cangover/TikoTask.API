@@ -13,11 +13,9 @@ namespace TikoTask.Data.Context
         public TikoDBContext(DbContextOptions<TikoDBContext> options) : base(options)
         {
         }
-
+        //Entity set by using interface
         public DbSet<City> Cities { get; set; }
         public DbSet<Agent> Agents { get; set; }
-        public DbSet<House> Houses { get; set; }
-
-        
+        public DbSet<House> Houses { get; set; }        
     }
 }

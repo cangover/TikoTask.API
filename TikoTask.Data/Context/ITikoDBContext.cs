@@ -13,6 +13,7 @@ namespace TikoTask.Data.Context
         DbSet<City> Cities { get; set; }
         DbSet<Agent> Agents { get; set; }
         DbSet<House> Houses { get; set; }
+        //Save implementations asynchronous
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
     }
 }

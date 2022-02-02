@@ -7,7 +7,7 @@ using TikoTask.Business.Abstract;
 using TikoTask.Data.Entities;
 
 namespace TikoTask.API.Controllers
-{
+{   //This class fulfill the operations for City Entity
     [ApiController]
     [Route("[controller]")]
     public class TikoCityController : ControllerBase

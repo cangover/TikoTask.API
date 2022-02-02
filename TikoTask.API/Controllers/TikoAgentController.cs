@@ -8,6 +8,7 @@ using TikoTask.Data.Entities;
 
 namespace TikoTask.API.Controllers
 {
+    // This class fulfill the operations for Agent Entity
     [ApiController]
     [Route("[controller]")]
     public class TikoAgentController : ControllerBase

@@ -27,6 +27,7 @@ namespace TikoTask.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //To define DB connection and other issues 
             services.AddDbContext<TikoDBContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<ITikoDBContext>(provider => provider.GetService<TikoDBContext>());
             services.AddScoped<ITikoRepository, TikoRepository>();
@@ -38,9 +39,7 @@ namespace TikoTask.API
                 var fileName = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 var filepath = Path.Combine(AppContext.BaseDirectory, fileName);
                 c.IncludeXmlComments(filepath);
-            });
-
-            
+            });           
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

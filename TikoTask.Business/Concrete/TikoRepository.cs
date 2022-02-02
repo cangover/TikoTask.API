@@ -11,8 +11,9 @@ using TikoTask.Data.Entities;
 
 namespace TikoTask.Business.Concrete
 {
+    //Business layer for checking DB responses with requests, inherits from ITikoRepository
     public class TikoRepository : ITikoRepository
-    {
+    {        
         private readonly ITikoDBContext _context;
         public TikoRepository(ITikoDBContext context)
         {
@@ -23,19 +24,16 @@ namespace TikoTask.Business.Concrete
             _context.Agents.Add(agent);
             await _context.SaveChangesAsync();
         }
-
         public async Task CreateCity(City city)
         {
             _context.Cities.Add(city);
             await _context.SaveChangesAsync();
         }
-
         public async Task CreateHouse(House house)
         {
             _context.Houses.Add(house);
             await _context.SaveChangesAsync();
         }
-
         public async Task DeleteAgent(int id)
         {
             var item = await _context.Agents.FindAsync(id);
@@ -45,7 +43,6 @@ namespace TikoTask.Business.Concrete
             _context.Agents.Remove(item);
             await _context.SaveChangesAsync();
         }
-
         public async Task DeleteHouse(int id)
         {
             var item = await _context.Houses.FindAsync(id);
@@ -56,27 +53,22 @@ namespace TikoTask.Business.Concrete
             _context.Houses.Remove(item);
             await _context.SaveChangesAsync();
         }
-
         public async Task<IEnumerable<Agent>> GetAgents()
         {
             return await _context.Agents.ToListAsync();
         }
-
         public async Task<IEnumerable<City>> GetCities()
         {
             return await _context.Cities.ToListAsync();
         }
-
         public async Task<IEnumerable<House>> GetHousesbyAgent(string agent)
         {
             return await _context.Houses.Where(x => x.Agent == agent).ToListAsync();
         }
-
         public async Task<IEnumerable<House>> GetHousesbyCity(string city)
         {
             return await _context.Houses.Where(x => x.City == city).ToListAsync();
         }
-
         public async Task UpdateHousePrice(int id, string price)
         {
             bool has_item = false;
