@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TikoTask.API</name>
+    </assembly>
+    <members>
+        <member name="M:TikoTask.API.Controllers.TikoAgentController.CreateAgent(TikoTask.Data.Entities.Agent)">
+            <summary>
+            Creating Agent via Entity
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TikoTask.API.Controllers.TikoAgentController.DeleteAgent(System.Int32)">
+            <summary>
+            Deleting Agent by Id
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TikoTask.API.Controllers.TikoAgentController.GetAgents">
+            <summary>
+            Get All Agents
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TikoTask.API.Controllers.TikoCityController.CreateCity(TikoTask.Data.Entities.City)">
+            <summary>
+            Creating City via Entity
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TikoTask.API.Controllers.TikoCityController.GetCities">
+            <summary>
+            Get All Cities
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TikoTask.API.Controllers.TikoHouseController.CreateHouse(TikoTask.Data.Entities.House)">
+            <summary>
+            Creating House via Entity, All Necessary except Description
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TikoTask.API.Controllers.TikoHouseController.DeleteHouse(System.Int32)">
+            <summary>
+            Deleting House by Id
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TikoTask.API.Controllers.TikoHouseController.GetHousesByAgent(System.String)">
+            <summary>
+            Listing Houses via Agent Name
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TikoTask.API.Controllers.TikoHouseController.GetHousesByCities(System.String)">
+            <summary>
+            Listing Houses via City Name
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TikoTask.API.Controllers.TikoHouseController.UpdateHousePrice(System.Int32,System.String)">
+            <summary>
+            Updating House Price by It's Id
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

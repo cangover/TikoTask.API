@@ -9,18 +9,18 @@ namespace TikoTask.Data.Entities
 {
     public class House
     {
-        //[Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        //[Required]
+        [Required]
         public string City { get; set; }
-        //[Required]
+        [Required]
         public string Agent { get; set; }
-        //[Required]
+        [Required]
         public string Price { get; set; }
-        //[Required]
+        [Required]
         public string Address { get; set; }
         public string Description { get; set; }
-        //[Required]
+        [Required]
         public string BedroomCount { get; set; }
     }
 }

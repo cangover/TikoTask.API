@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Http;
 using TikoTask.Business.Abstract;
 using TikoTask.Data.Context;
 using TikoTask.Data.Entities;
@@ -66,24 +67,28 @@ namespace TikoTask.Business.Concrete
             return await _context.Cities.ToListAsync();
         }
 
-        public async Task<House> GetHousesbyAgent(Agent name)
+        public async Task<IEnumerable<House>> GetHousesbyAgent(string agent)
         {
-            return await _context.Houses.FindAsync(name);
+            return await _context.Houses.Where(x => x.Agent == agent).ToListAsync();
         }
 
-        public async Task<House> GetHousesbyCity(City name)
+        public async Task<IEnumerable<House>> GetHousesbyCity(string city)
         {
-            return await _context.Houses.FindAsync(name);
+            return await _context.Houses.Where(x => x.City == city).ToListAsync();
         }
 
-        public async Task UpdateHousePrice(House house)
+        public async Task UpdateHousePrice(int id, string price)
         {
-            var item = await _context.Houses.FindAsync(house.Id);
-            if (item == null)
+            bool has_item = false;
+            foreach (var e in _context.Houses.Where(a => a.Id == id))
+            {
+                e.Price = price;
+                has_item = true;
+            }
+            if (has_item == false)
             {
                 throw new NullReferenceException();
             }
-            item.Price = house.Price;
             await _context.SaveChangesAsync();
         }
     }

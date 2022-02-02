@@ -8,7 +8,7 @@ namespace TikoTask.Data.Entities
 {
     public class City
     {
-        [Required]
+        [Key, Required]
         public string Name { get; set; }
     }
 }

@@ -14,10 +14,10 @@ namespace TikoTask.Business.Abstract
         Task<IEnumerable<Agent>> GetAgents();
         Task CreateAgent(Agent agent);
         Task DeleteAgent(int id);
-        Task<House> GetHousesbyAgent(Agent name);
-        Task<House> GetHousesbyCity(City name);
+        Task<IEnumerable<House>> GetHousesbyAgent(string agent);
+        Task<IEnumerable<House>> GetHousesbyCity(string city);
         Task CreateHouse(House house);
-        Task UpdateHousePrice(House house);
+        Task UpdateHousePrice(int id, string price);
         Task DeleteHouse(int id);
     }
 }
